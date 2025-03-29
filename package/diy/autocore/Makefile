@@ -41,11 +41,11 @@ define Build/Compile
 endef
 
 define Package/autocore-arm/install
-	$(INSTALL_DIR) $(1)/etc
-	$(INSTALL_DATA) ./files/arm/index.htm $(1)/etc/index.htm
-	$(INSTALL_DIR) $(1)/etc/uci-defaults
-	$(INSTALL_BIN) ./files/60-autocore-reload-rpcd $(1)/etc/uci-defaults/
-	$(INSTALL_BIN) ./files/arm/090-cover-index_htm $(1)/etc/uci-defaults/
+#	$(INSTALL_DIR) $(1)/etc
+#	$(INSTALL_DATA) ./files/arm/index.htm $(1)/etc/index.htm
+#	$(INSTALL_DIR) $(1)/etc/uci-defaults
+#	$(INSTALL_BIN) ./files/60-autocore-reload-rpcd $(1)/etc/uci-defaults/
+#	$(INSTALL_BIN) ./files/arm/090-cover-index_htm $(1)/etc/uci-defaults/
 	$(INSTALL_DIR) $(1)/sbin
 	$(INSTALL_BIN) ./files/arm/sbin/cpuinfo $(1)/sbin/cpuinfo
 	$(INSTALL_BIN) ./files/arm/sbin/ethinfo $(1)/sbin/ethinfo
@@ -53,8 +53,8 @@ define Package/autocore-arm/install
 ifneq ($(filter ipq% %filogic qualcommax%, $(TARGETID)),)
 	$(INSTALL_BIN) ./files/arm/sbin/tempinfo $(1)/sbin/tempinfo
 endif
-	$(INSTALL_DIR) $(1)/usr/share/rpcd/acl.d
-	$(CP) ./files/luci-mod-status-autocore.json $(1)/usr/share/rpcd/acl.d/
+#	$(INSTALL_DIR) $(1)/usr/share/rpcd/acl.d
+#	$(CP) ./files/luci-mod-status-autocore.json $(1)/usr/share/rpcd/acl.d/
 endef
 
 define Package/autocore-x86/install
